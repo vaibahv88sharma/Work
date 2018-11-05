@@ -11,6 +11,7 @@ import { VasqiComponent } from './component/page/vasqi/vasqi.component';
 import { PatientComponent } from './component/tabs/patient/patient.component';
 import { RespondingCrewsComponent } from './component/tabs/responding-crews/responding-crews.component';
 import { GlobalNavComponent } from './component/layout/global-nav/global-nav.component';
+import { VasqiNoTabsComponent } from './component/page/vasqi-no-tabs/vasqi-no-tabs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GlobalNavComponent } from './component/layout/global-nav/global-nav.com
     VasqiComponent,
     PatientComponent,
     RespondingCrewsComponent,
-    GlobalNavComponent
+    GlobalNavComponent,
+    VasqiNoTabsComponent
   ],
   imports: [
     BrowserModule,
