@@ -15,6 +15,7 @@ export class CaseAdminComponent implements OnInit {
   ngOnInit() {
     this.caseAdminForm = this.fb.group({
       primaryCaseNumber: ['', [Validators.required, Validators.minLength(3)]],
+      acknowledgment: 1
     });
   }
 
