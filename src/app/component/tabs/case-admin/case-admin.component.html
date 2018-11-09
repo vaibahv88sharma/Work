@@ -7,7 +7,7 @@
     </div>
   </div>
 </div>
-<div class="mt-4 pt-4 border border-primary mt-4 px-4 rounded">
+<div class="mt-4 pt-4 border border-default mt-4 px-4 rounded">
   <div class="row">
     <div class="col-12">
       <form (ngSubmit)="save(caseAdminForm)" [formGroup]="caseAdminForm">
@@ -19,6 +19,7 @@
                 <label class="col-6 col-form-label text-right" for="primaryCaseNumber">Primary Case No</label>
                 <div class="col-6">
                   <input id="primaryCaseNumber" name="primaryCaseNumber" placeholder="Case Number" type="text" class="form-control"
+                  [value]="1011"
                     formControlName="primaryCaseNumber">
                 </div>
               </div>
@@ -118,10 +119,10 @@
           </div>
           <div class="row">
             <div class="col text-info">
-              Scene Details :-
+              Scene Details
             </div>
           </div>
-          <div class="row mb-4 py-4 border border-primary">
+          <div class="row mb-4 py-4 border border-default">
             <!-- <div class="col-12 border-bottom border-primary mb-3">
               <span class="">Scene Details :-</span>
             </div> -->
@@ -196,13 +197,26 @@
             </div>          
           <div class="form-group row">
             <!-- <div class="offset-10 col-2"> -->
-            <div class="col-9 d-flex justify-content-start align-items-center">
-              <div class="mr-4 text-info"> <!-- <div class="border-bottom border-primary"> -->
-                Acknowledgment of Details:
-              </div>
-                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="acknowledgment">
+            <div class="col-12 d-flex justify-content-start align-items-center">
+
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2">
+                        <div class="mr-4 text-info">
+                            Acknowledgment 
+                          </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <mat-radio-group class="example-radio-group">
+                            <mat-radio-button class="mx-2" *ngFor="let vasqiAcknowlegde of vasqiAcknowlegdeArray" [value]="season">
+                              {{vasqiAcknowlegde}}&nbsp;&nbsp;
+                            </mat-radio-button>
+                          </mat-radio-group>                      
+                    </div>
+                  </div>
+
+                <!-- <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="acknowledgment">
                     <label ngbButtonLabel class="btn-primary">
-                      <input ngbButton type="radio" [value]="1"> Reviewed
+                      <input ngbButton type="radio" [value]="1"> 'Reviewed', 'Irrelevant', 'To be reviewed', 'Case Complete'
                     </label>
                     <label ngbButtonLabel class="btn-primary">
                       <input ngbButton type="radio" [value]="2"> Irrelevant
@@ -213,9 +227,9 @@
                     <label ngbButtonLabel class="btn-primary">
                         <input ngbButton type="radio" [value]="4"> Case Complete 
                       </label>                    
-                  </div>
+                  </div> -->
             </div>
-            <div class="col-3">
+            <div class="col-12">
               <div class="nav justify-content-end">
                 <button name="submit" type="submit" class="btn btn-success btn-lg mr-2">Submit</button>
                 <button name="submit" type="submit" class="btn btn-danger btn-lg">Cancel</button>

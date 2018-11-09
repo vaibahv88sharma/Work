@@ -8,6 +8,9 @@ import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from
 })
 export class CaseAdminComponent implements OnInit {
 
+  vasqiAcknowlegdeArray: Array<string>;
+  vasqiAcknowlegdeSelected;
+
   constructor(private fb: FormBuilder) { }
 
   caseAdminForm: FormGroup;
@@ -17,6 +20,8 @@ export class CaseAdminComponent implements OnInit {
       primaryCaseNumber: ['', [Validators.required, Validators.minLength(3)]],
       acknowledgment: 1
     });
+
+    this.vasqiAcknowlegdeArray = ['Reviewed', 'Irrelevant', 'To be reviewed', 'Case Complete'];
   }
 
   save(caseAdminForm) {

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppComponent } from '../app/component/layout/app.component';
 import { GlobalHeaderComponent } from './component/layout/global-header/global-header.component';
@@ -15,9 +17,10 @@ import { GlobalNavComponent } from './component/layout/global-nav/global-nav.com
 import { VasqiNoTabsComponent } from './component/page/vasqi-no-tabs/vasqi-no-tabs.component';
 import { CaseAdmin2Component } from './component/tabs/case-admin2/case-admin2.component';
 import { VasqiNoTabsViewComponent } from './component/page/vasqi-no-tabs-view/vasqi-no-tabs-view.component';
+import { VasqiNoTabsViewComponent2Component } from './component/page/vasqi-no-tabs-view-component2/vasqi-no-tabs-view-component2.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: VasqiNoTabsViewComponent },
+  { path: 'home', component: VasqiNoTabsViewComponent2Component },
   { path: 'caseadmin', component: CaseAdminComponent },
   { path: '',
     redirectTo: '/home',
@@ -38,7 +41,8 @@ const appRoutes: Routes = [
     GlobalNavComponent,
     VasqiNoTabsComponent,
     CaseAdmin2Component,
-    VasqiNoTabsViewComponent
+    VasqiNoTabsViewComponent,
+    VasqiNoTabsViewComponent2Component
   ],
   imports: [
     RouterModule.forRoot(
@@ -47,6 +51,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
   ],
